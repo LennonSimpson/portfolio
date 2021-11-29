@@ -63,13 +63,14 @@ body {
 }
 
 .featureProject {
-    background-color: #464866;
+    
     width: 100%;
     border: 2px #AAABB8 solid;
     border-radius: 5px;
     height: 400px;
-    background-image: url ('assets/images/US-NationalParkService-Logo.jpg');
-    background-size: cover;
+    background-image: url ('../assets/images/NPSresize.jpg');
+    background-image: cover;
+
 }
 
 .projectList {
