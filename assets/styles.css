@@ -68,6 +68,8 @@ body {
     border: 2px #AAABB8 solid;
     border-radius: 5px;
     height: 400px;
+    background-image: url ('assets/images/US-NationalParkService-Logo.jpg');
+    background-size: cover;
 }
 
 .projectList {
