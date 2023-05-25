@@ -27,12 +27,12 @@ const RotatingCube = () => {
     // Create the cube mesh and add it to the scene
     const cube = new THREE.Mesh(geometry, materials);
 
-    // Assign userData to each face of the cube
-    cube.children.forEach((child, index) => {
-      child.userData.side = index; // Assign side identifier to userData
+    cube.material.forEach((material, index) => {
+      material.userData = { side: index };
     });
     
     scene.add(cube);
+    console.log(cube);
 
     // Set up animation
     function animate() {
@@ -62,11 +62,12 @@ const RotatingCube = () => {
       // Raycasting to detect intersected objects
       const raycaster = new THREE.Raycaster();
       raycaster.setFromCamera(mouse, camera);
-      const intersects = raycaster.intersectObjects([cube], true);
+
+      const intersects = raycaster.intersectObjects(scene.children);
 
       if (intersects.length > 0) {
         // Get the side identifier from the clicked object
-        const clickedSide = intersects[0].faceIndex;
+        const clickedSide = intersects[0].face.materialIndex;
 
         // Perform actions based on the clicked side
         switch (clickedSide) {
