@@ -32,7 +32,6 @@ const RotatingCube = () => {
     });
     
     scene.add(cube);
-    console.log(cube);
 
     // Set up animation
     function animate() {
